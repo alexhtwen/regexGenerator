@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+
+
+
+
+.*?\b(BNT|Moderna|AZ|Johnson|Sinovac|Sinopharm)\b.*?\b(?:va|b|a)\s*(\d+(?:\.\d*)?)\s*(?=cc|ml)

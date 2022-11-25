@@ -1,0 +1,23 @@
+version: "3"
+services:
+  regex_generator:
+    image: regex_generator-image
+    container_name: regex_generator-container
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GEN_CERT=yes
+      - GRANT_SUDO=yes
+      - NB_UID=1000
+      - NB_GID=100
+      - CHOWN_HOME=yes
+      - CHOWN_HOME_OPTS=-R
+    ports:
+      - 8000:8080
+      - 8899:8899
+    volumes:
+      - /home/alex/projects/regexGenerator:/jupyter
+      - /etc/localtime:/etc/localtime:ro
+    working_dir: /jupyter
